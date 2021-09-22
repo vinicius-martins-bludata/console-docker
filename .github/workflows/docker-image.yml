@@ -13,31 +13,34 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    
-    - name: Setup GitVersion
-      uses: gittools/actions/gitversion/setup@v0.9.7
-      with:
-        versionSpec: '5.5.0'
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          fecth-depth: 0
 
-    - name: Determine Version
-      id: gitversion
-      uses: gittools/actions/gitversion/execute@v0.9.7
-      with:
-        useConfigFile: true
-        configFilePath: GitVersion.yml
-    
-    - name: Docker Login
-      uses: docker/login-action@v1.10.0
-      with:
-        username: ${{ secrets.DOCKERHUB_USERNAME }}
-        password: ${{ secrets.DOCKERHUB_TOKEN }}
-    
-    - name: Build the Docker image
-      run: docker build -t ${{ github.repository }} .
-    
-    - name: Tag Docker image
-      run: docker tag ${{ github.repository }} viniciusmartinsbludata/github-actions-automations:${{ steps.gitversion.outputs.MajorMinorPatch }}
-      
-    - name: Push Docker image
-      run: docker push viniciusmartinsbludata/github-actions-automations:${{ steps.gitversion.outputs.MajorMinorPatch }}
+      - name: Setup GitVersion
+        uses: gittools/actions/gitversion/setup@v0.9.7
+        with:
+          versionSpec: '5.5.0'
+
+      - name: Determine Version
+        id: gitversion
+        uses: gittools/actions/gitversion/execute@v0.9.7
+        with:
+          useConfigFile: true
+          configFilePath: GitVersion.yml
+
+      - name: Docker Login
+        uses: docker/login-action@v1.10.0
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build the Docker image
+        run: docker build -t ${{ github.repository }} .
+
+      - name: Tag Docker image
+        run: docker tag ${{ github.repository }} viniciusmartinsbludata/github-actions-automations:${{ steps.gitversion.outputs.MajorMinorPatch }}
+
+      - name: Push Docker image
+        run: docker push viniciusmartinsbludata/github-actions-automations:${{ steps.gitversion.outputs.MajorMinorPatch }}
