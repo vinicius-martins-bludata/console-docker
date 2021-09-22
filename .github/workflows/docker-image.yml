@@ -25,7 +25,7 @@ jobs:
       run: docker build -t ${{ github.repository }} .
     
     - name: Tag Docker image
-      run: docker tag ${{ github.repository }} ${{ github.repository }}:master
+      run: docker tag ${{ github.repository }} viniciusmartinsbludata/github-actions-automations:master
       
     - name: Push Docker image
-      run: docker push ${{ github.repository }}
+      run: docker push viniciusmartinsbludata/github-actions-automations
