@@ -20,6 +20,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
 
       - name: Login Dockerhub
         uses: docker/login-action@28218f9b04b4f3f62068d7b6ce6ca5b26e35336c
