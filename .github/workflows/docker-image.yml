@@ -28,4 +28,4 @@ jobs:
       run: docker tag ${{ github.repository }} viniciusmartinsbludata/github-actions-automations:master
       
     - name: Push Docker image
-      run: docker push viniciusmartinsbludata/github-actions-automations
+      run: docker push viniciusmartinsbludata/github-actions-automations:master
