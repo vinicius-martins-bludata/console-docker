@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "tNA4NkW5CY3aXMprS5jhhucOEiZ6kA6rzoR/W1SOD9kbLQuvjE14vEWADGV6Z8V5WHXrBbBOvOTDj00EtDokcA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\vinicius.martins.BLUDATA\\Documents\\Consumer\\Consumer\\Consumer.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\vinicius.martins.BLUDATA\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.11.1\\microsoft.visualstudio.azure.containers.tools.targets.1.11.1.nupkg.sha512",
+    "C:\\Users\\vinicius.martins.BLUDATA\\.nuget\\packages\\vanfarock.bibliotecas\\1.0.0\\vanfarock.bibliotecas.1.0.0.nupkg.sha512",
+    "C:\\Users\\vinicius.martins.BLUDATA\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.8\\microsoft.netcore.app.host.win-x64.5.0.8.nupkg.sha512"
+  ],
+  "logs": []
+}
